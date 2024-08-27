@@ -1,0 +1,12 @@
+Numpy Arrays
+A NumPy array is a Numpy object upon which the dot method can be performed as below. However, this method accepts only NumPy arrays to operate on.
+
+# convert lists into NumPy arrays
+ newa = np.array(a)
+ newb = np.array(b)
+ z = newa.dot(newb)
+ print(z)
+O/P:
+[[-1 -1 25]
+ [ 6 10 22]
+ [31 27 19]]
