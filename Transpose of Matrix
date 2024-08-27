@@ -13,3 +13,67 @@ b
  [2 3]
  [3 4]
  [4 5]]
+
+If the matrix is a NumPy array, it can be treated as an object and method T can be applied over it as follows.
+
+# Transpose of a Matrix (as NumPy array)
+print ("Matrix and its Transpose")
+a = np.array([[1,2,3,4],[2,3,4,5]])
+b = a.T
+print('a\n',a)
+print('b\n',b)
+
+Matrix and its Transpose
+a
+ [[1 2 3 4]
+ [2 3 4 5]]
+b
+ [[1 2]
+ [2 3]
+ [3 4]
+ [4 5]]
+
+The dot method of NumPy performs dot-matrix product (scalar product) for 1D or higher dimensional arrays. If the inputs are scalars (numbers), it performs multiplication.
+
+# scalars
+ a = 5
+ b = 3
+ z = np.dot(a,b)
+ print(z)
+O/P:
+15
+
+z = a * b
+ print(z)
+O/P:
+15
+
+In the case of one- or higher-dimensional arrays, the inputs can be either NumPy arrays, Python arrays, Python lists or Python’s nested lists.
+
+# 1D arrays or vectors
+ a = np.array([1,2,3])  # or a = [1,2,3]
+ b = np.array([2,3,4])  # or b = [2,3,4]
+ z = np.dot(a,b)
+ print(z)
+O/P:
+20
+
+# 2D arrays or matrices
+ a = [[1,2,3],[2,0,3],[7,-5,1]]
+ b = [[3,-1,5],[-2,-6,4], [0,4,4]]
+ z = np.dot(a,b)
+ print(z)
+O/P:
+[[-1 -1 25]
+ [ 6 10 22]
+ [31 27 19]]
+
+We can obtained the same result using np.matmul().
+
+z = np.matmul(a,b)
+print(z)
+
+O/P:
+[[-1 -1 25]
+ [ 6 10 22]
+ [31 27 19]]
