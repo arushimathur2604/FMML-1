@@ -1,0 +1,15 @@
+Transpose of Matrix<br>
+Matrix transpose is performed with the transpose method on a nested list or a Python array, or a higher-dimensional Numpy array.<br>
+# Transpose of a Matrix (as nested list)
+ a = [[1,2,3,4],[2,3,4,5]]
+ b = np.transpose(a)
+ print('a\n',a)
+ print('b\n',b)<br>
+Output:<br>
+a
+ [[1, 2, 3, 4], [2, 3, 4, 5]]
+b
+ [[1 2]
+ [2 3]
+ [3 4]
+ [4 5]]
