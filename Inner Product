@@ -1,0 +1,16 @@
+Inner Product
+The inner product is the scalar multiplication of one vector (or matrix) and the transpose of another vector (or matrix).
+If both arrays are 1D arrays, their dimensions should be identical.
+If either or both arrays are higher-dimensional, then the last dimensions of both arrays should be identical.
+
+a = np.array([[1,2,3], [4,-1,0]])
+ b = np.array([6,3,2])
+ z = np.inner(a,b)
+ print(z)
+O/P:
+[18 21]
+
+# The same results can be obtained using the dot method as follows.
+a.dot(b.T)
+O/P:
+array([18, 21])
