@@ -1,0 +1,47 @@
+The multi_dot method
+It performs dot (scalar) product with 2 or more input matrices. First and last arrays can be either 1D or 2D arrays.
+However, the dimensions of the matrices must suit subsequent scalar matrix multiplication.
+
+# matrices with random integers: entries ranging from -4 to 4
+ a = np.random.randint(-4,4,(500,5))
+ b = np.random.randint(-4,4,(5,1000))
+ c = np.random.randint(-4,4,(1000,10))
+ d = np.random.randint(-4,4,(10,2000))
+ e = np.random.randint(-4,4,(2000,200))
+ # Perform multiple matrix multiplication
+ z = np.linalg.multi_dot([a,b,c,d,e])
+
+The result of this method can be obtained with successive dot products of matrices but multi_dot functions in an optimized manner.
+It decides the order of dot multiplication to complete the entire process efficiently.
+
+%%time
+ z = np.linalg.multi_dot([a,b,c,d,e])
+ print(z, '\n')
+O/P:
+[[ -361006  -916268  -778770 ...  -699666 -2185775  -876210]
+ [ 2538957  3173956  2409500 ...  2600270  2710173  3983810]
+ [ 3575767  5056325  3233341 ...  3857030  5375848  6110184]
+ ...
+ [ 5457073  6775395  4665659 ...  5500575  7190977  7554996]
+ [ 3594149  4132451  3180359 ...  3615087  4426597  4745914]
+ [-2648105 -4218007 -2266457 ... -2729745 -3253406 -5038804]] 
+
+CPU times: user 6.55 ms, sys: 0 ns, total: 6.55 ms
+Wall time: 8.82 ms
+
+%%time
+ z = a.dot(b).dot(c).dot(d).dot(e)
+ print(z, '\n')
+O/P:
+[[ -361006  -916268  -778770 ...  -699666 -2185775  -876210]
+ [ 2538957  3173956  2409500 ...  2600270  2710173  3983810]
+ [ 3575767  5056325  3233341 ...  3857030  5375848  6110184]
+ ...
+ [ 5457073  6775395  4665659 ...  5500575  7190977  7554996]
+ [ 3594149  4132451  3180359 ...  3615087  4426597  4745914]
+ [-2648105 -4218007 -2266457 ... -2729745 -3253406 -5038804]] 
+
+CPU times: user 363 ms, sys: 6.13 ms, total: 369 ms
+Wall time: 451 ms
+
+Observe the CPU time that multi_dot consumes as against CPU time that successive dot methods consume to arrive at the same solution. Which one is more efficient, why ?
