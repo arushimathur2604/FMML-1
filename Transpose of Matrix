@@ -77,3 +77,243 @@ O/P:
 [[-1 -1 25]
  [ 6 10 22]
  [31 27 19]]
+
+
+
+
+
+
+
+Here's an explanation of the code:
+
+Code Breakdown:
+# Matrix (as a nested list)
+a = [[1, 2, 3, 4], [2, 3, 4, 5]]  # A 2x4 matrix represented as a list of lists
+
+# Transpose the matrix 'a' using numpy's transpose function
+b = np.transpose(a)  # This converts 'a' into its transpose (i.e., rows become columns and columns become rows)
+
+# Print the original matrix 'a'
+print('a\n', a)  # Prints the original matrix 'a' as a list of lists
+
+# Print the transposed matrix 'b'
+print('b\n', b)  # Prints the transposed matrix 'b'
+Output:
+Matrix a is a 2x4 matrix:
+
+(
+1
+2
+3
+4
+2
+3
+4
+5
+)
+( 
+1
+2
+​
+  
+2
+3
+​
+  
+3
+4
+​
+  
+4
+5
+​
+ )
+Matrix b will be the transpose of a, which means rows become columns and vice versa. The transposed matrix b will be a 4x2 matrix:
+
+(
+1
+2
+2
+3
+3
+4
+4
+5
+)
+​
+  
+1
+2
+3
+4
+​
+  
+2
+3
+4
+5
+​
+  
+​
+ 
+Explanation of np.transpose(a):
+The np.transpose(a) function is used to calculate the transpose of matrix a, which switches rows and columns:
+First row of a ([1, 2, 3, 4]) becomes the first column of b.
+Second row of a ([2, 3, 4, 5]) becomes the second column of b.
+
+
+
+
+Here’s an explanation of the code that transposes a matrix using NumPy arrays:
+
+Code Breakdown:
+# Print a title for the output
+print("Matrix and its Transpose")
+
+# Create a 2x4 matrix 'a' as a NumPy array
+a = np.array([[1, 2, 3, 4], [2, 3, 4, 5]])
+
+# Transpose the matrix 'a' using NumPy's transpose shortcut '.T'
+b = a.T
+
+# Print the original matrix 'a'
+print('a\n', a)
+
+# Print the transposed matrix 'b'
+print('b\n', b)
+Explanation:
+Matrix Creation (np.array):
+
+python
+Copy code
+a = np.array([[1, 2, 3, 4], [2, 3, 4, 5]])
+The np.array function creates a NumPy array from the provided nested list.
+The matrix a is a 2x4 matrix:
+(
+1
+2
+3
+4
+2
+3
+4
+5
+)
+( 
+1
+2
+​
+  
+2
+3
+​
+  
+3
+4
+​
+  
+4
+5
+​
+ )
+Transpose of the Matrix (a.T):
+
+python
+Copy code
+b = a.T
+a.T is a shortcut for transposing a NumPy array. It swaps the rows and columns of the matrix.
+The transposed matrix b is a 4x2 matrix:
+(
+1
+2
+2
+3
+3
+4
+4
+5
+)
+​
+  
+1
+2
+3
+4
+​
+  
+2
+3
+4
+5
+​
+  
+​
+ 
+Print the Original Matrix a:
+
+print('a\n', a) prints the original matrix a in a 2x4 format.
+Print the Transposed Matrix b:
+
+print('b\n', b) prints the transposed matrix b in a 4x2 format.
+Output:
+Original Matrix a:
+
+(
+1
+2
+3
+4
+2
+3
+4
+5
+)
+( 
+1
+2
+​
+  
+2
+3
+​
+  
+3
+4
+​
+  
+4
+5
+​
+ )
+Transposed Matrix b:
+
+(
+1
+2
+2
+3
+3
+4
+4
+5
+)
+​
+  
+1
+2
+3
+4
+​
+  
+2
+3
+4
+5
+​
+  
+​
+ 
+Key Points:
+np.array is used to create a NumPy array from a list.
+a.T is a simple way to transpose a matrix in NumPy, making the code cleaner and more efficient.
+
